@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seja Voluntário - VivaMente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-content">
+      <a class="brand" href="index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk3gaJ_Pw7jjIJdzP4YtEkUh5jGeTUGdypjA&s" alt="Logo VivaMente" class="logo"/>
+        <span>VivaMente</span>
+      </a>
+      <nav class="main-nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="voluntario.html" class="active">Voluntário</a></li>
+          <li><a href="doar.html" class="donate">Doar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content">
+    <section class="voluntario-section">
+      <h1>Seja Voluntário</h1>
+      <p class="intro-text">Acreditamos no poder da empatia e da ação. Junte-se a nós e ajude a transformar vidas!</p>
+
+      <form id="volForm" class="form voluntario-form" aria-label="Formulário de voluntariado">
+        <label>
+          Nome completo
+          <input type="text" name="name" placeholder="Digite seu nome completo" required />
+        </label>
+
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="exemplo@dominio.com" required />
+        </label>
+
+        <label>
+          Cidade
+          <input type="text" name="city" placeholder="Informe sua cidade" />
+        </label>
+
+        <label>
+          Interesses
+          <textarea name="bio" rows="4" placeholder="Conte-nos sobre suas habilidades e motivações"></textarea>
+        </label>
+
+        <button class="btn" type="submit">Enviar inscrição</button>
+        <div id="volMessage" class="msg" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year4"></span> VivaMente — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year4').textContent = new Date().getFullYear();
+
+    // Simula envio e mensagem de sucesso
+    document.getElementById("volForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const msg = document.getElementById("volMessage");
+      msg.textContent = "Inscrição enviada com sucesso! 💚 Obrigado por se voluntariar.";
+      msg.classList.add("success");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
